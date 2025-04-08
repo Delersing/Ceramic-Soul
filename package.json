@@ -7,5 +7,9 @@
   },
   "author": "Moroz Ivan",
   "license": "ISC",
-  "description": "Ceramic soul"
+  "description": "Ceramic soul",
+  "devDependencies": {
+    "sass": "^1.86.3",
+    "vite": "^6.2.5"
+  }
 }
