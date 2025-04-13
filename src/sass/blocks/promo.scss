@@ -1,13 +1,25 @@
 .promo {
+    position: relative;
     padding-top: 50px;
 
+    &__potter {
+        display: none;
+    }
+
+    &__wrapper {
+        margin-top: 50px;
+    }
+
     &__title {
-        margin-block-start: 50px;
         padding-inline: 5px;
     }
 
+    &__cta {
+        margin-top: 40px;
+    }
+
     &__img {
-        margin: 40px auto 0 auto;
+        margin: 0 auto 0 auto;
         width: 270px;
         height: 377px;
         box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.25);
@@ -15,5 +27,77 @@
 
     &__btn {
         margin: 18px auto 0 auto;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .promo {
+        &__wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__cta {
+            margin-top: 0px
+        }
+
+        &__img {
+            width: 230px;
+            height: 321px;
+        }
+
+        &__title {
+
+            padding-inline: 0;
+            padding-top: 250px;
+            padding-left: 71px;
+            text-align: left;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .promo {
+        &__potter {
+            display: block;
+            position: absolute;
+            width: clamp(450px, 37.5vw, 640px);
+            height: 633px;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+        }
+
+        &__title {
+
+            padding-left: 571px;
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .promo {
+        padding-top: 40px;
+
+        &__potter {
+            width: 640px;
+            height: 900px;
+
+        }
+
+        &__wrapper {
+            margin-top: 79px;
+        }
+
+        &__img {
+            width: 330px;
+            height: 460px;
+        }
+
+        &__title {
+
+            padding-top: 384px;
+            padding-left: 642px;
+        }
     }
 }
