@@ -1,0 +1,161 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.git {
+    padding-top: 60px;
+
+    &__wrapper {
+        min-height: 300px;
+        margin-top: 60px;
+        position: relative;
+    }
+
+    &__img-tea {
+        display: none;
+    }
+
+    &__img-vase {
+        display: none;
+    }
+
+    &__fieldset {
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__label {
+        display: block;
+        color: $dark;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 28px;
+
+        &:nth-child(2) {
+            margin-top: 8px;
+        }
+    }
+
+    &__input {
+        width: 100%;
+        height: 48px;
+        padding: 10px 15px;
+        border-radius: 2px;
+        border: 1px solid #E2E1E5;
+        background: #fff;
+        color: $dark;
+
+        &:focus {
+            border: none;
+            outline: 1px solid $dark;
+        }
+
+        &::placeholder {
+            color: $ui-disabled;
+            font-size: 14px;
+        }
+    }
+
+    &__textarea {
+        width: 100%;
+        min-height: 160px;
+        padding: 10px 15px;
+        border-radius: 2px;
+        border: 1px solid #E2E1E5;
+        background: #fff;
+        color: $dark;
+        resize: none;
+
+        &:focus {
+            border: none;
+            outline: 1px solid $dark;
+        }
+
+        &::placeholder {
+            color: $ui-disabled;
+            font-size: 14px;
+        }
+    }
+
+    &__check-block {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+
+        a {
+            color: #A22DC6;
+            text-decoration: none;
+            margin-left: 2px;
+        }
+
+    }
+
+    &__checkbox {
+        accent-color: #A22DC6;
+        margin-right: 15px;
+        width: 15px;
+        height: 15px;
+    }
+
+    &__btn {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .git {
+        &__wrapper {
+            margin-top: 45px;
+
+        }
+
+        &__img-vase {
+            display: block;
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .git {
+        &__wrapper {
+            margin-top: 80px;
+        }
+
+        &__img-tea {
+            display: block;
+            height: 341px;
+            object-fit: cover;
+        }
+
+        &__input {
+            &:hover {
+                border: none;
+                outline: 1px solid $dark;
+            }
+        }
+
+        &__textarea {
+            &:hover {
+                border: none;
+                outline: 1px solid $dark;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .git {
+        padding-top: 100px;
+
+        &__img-tea {
+            height: 356px;
+            object-fit: cover;
+        }
+
+        &__wrapper {
+            margin-right: 75px;
+        }
+    }
+}
