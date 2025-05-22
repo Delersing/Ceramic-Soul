@@ -114,6 +114,11 @@
             right: 0px;
             bottom: 0px;
         }
+
+        &__form {
+            width: 300px;
+            margin-left: 20px;
+        }
     }
 }
 
@@ -156,6 +161,25 @@
 
         &__wrapper {
             margin-right: 75px;
+        }
+
+        &__fieldset {
+            display: flex;
+            justify-content: flex-start;
+            gap: 45px;
+        }
+
+        &__input {
+            width: 300px;
+        }
+
+        &__textarea {
+            width: 300px;
+        }
+
+        &__form {
+            width: 300px;
+            margin-left: 36px;
         }
     }
 }
