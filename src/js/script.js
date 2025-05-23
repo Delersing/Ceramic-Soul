@@ -20,8 +20,8 @@ try {
         loop: true,
         centeredSlides: true,
         navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+            nextEl: ".icon-right-open",
+            prevEl: ".icon-left-open",
         },
         pagination: {
             el: ".swiper-pagination",

@@ -1,6 +1,11 @@
+@use "/src/sass/base/variables.scss" as *;
+
 .works {
     padding-top: 60px;
-    padding-bottom: 100px;
+
+    &__wrapper {
+        position: relative;
+    }
 
     &__slider {
         margin-top: 40px;
@@ -10,8 +15,107 @@
         width: 100%;
     }
 
-    .swiper-button-prev,
-    .swiper-button-next {
+    .works__slider-nav {
         display: none;
+    }
+
+    .swiper-pagination {
+        bottom: -35px;
+
+        &-bullet {
+            width: 10px;
+            height: 10px;
+            border-radius: 0%;
+            background-color: $dark;
+            opacity: 1;
+            -webkit-tap-highlight-color: transparent; // для мобилок, когда кликаем по доту, он становится серым или каким-то другим цветом
+
+            &-active {
+                background-color: $ceramic;
+            }
+        }
+    }
+
+    .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+    .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0 12px 0 0;
+
+        &:last-child {
+            margin: 0 0 0 0;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .works {
+        .swiper-slide img {
+            display: block;
+            width: 400px;
+            margin: 0 auto;
+            object-fit: cover;
+        }
+
+        &__slider {
+            margin-top: 45px;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .works {
+
+        &__slider {
+            margin: 80px 40px 0 40px;
+        }
+
+        .swiper-pagination {
+            bottom: -30px;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            margin: 0;
+        }
+
+        .works__slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: block;
+            color: $dark;
+            font-size: 21px;
+            cursor: pointer;
+
+            &::before {
+                width: auto;
+                margin: 0;
+            }
+        }
+
+        .icon-left-open {
+            left: 13px;
+        }
+
+        .icon-right-open {
+            right: 13px;
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .works {
+        padding-top: 100px;
+
+        &__slider {
+            margin: 80px 85px 0 85px;
+        }
+
+        .icon-left-open {
+            left: 40px;
+        }
+
+        .icon-right-open {
+            right: 40px;
+        }
     }
 }
