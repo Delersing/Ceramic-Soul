@@ -1,0 +1,188 @@
+@use "/src/sass/base/mixins.scss" as *;
+@use "/src/sass/base/variables.scss" as *;
+
+.footer {
+    padding-bottom: 60px;
+    margin-top: 95px;
+    background-color: $dark;
+    color: $light;
+    font-size: 16px;
+    font-weight: 400;
+
+    &__title {
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+
+    &__subtitle {
+        margin-top: 20px;
+
+        &-mg40px {
+            margin-top: 40px;
+        }
+    }
+
+    &__wrapper {
+        padding-top: 50px;
+    }
+
+    &__newsletter {
+        &__wrapper {
+            width: 300px;
+            border-bottom: 1px solid $ui-active;
+            padding-bottom: 15px;
+
+            &-text {
+                margin-top: 40px;
+            }
+
+            &-input {
+                width: 100%;
+                padding: 5px 5px 5px 5px;
+                margin-top: 40px;
+                background-color: $dark;
+                border: none;
+                color: $light;
+            }
+        }
+
+        &__check-block {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+
+            a {
+                color: #A22DC6;
+                text-decoration: none;
+                margin-left: 2px;
+            }
+
+        }
+
+        &__checkbox {
+            accent-color: #A22DC6;
+            margin-right: 15px;
+            width: 15px;
+            height: 15px;
+            vertical-align: middle;
+            background-color: $dark;
+            border-radius: 2px;
+            border: 1px solid $light;
+            appearance: none;
+            cursor: pointer;
+
+            &:checked {
+                appearance: auto;
+            }
+        }
+
+
+
+        &__label {
+            color: $light;
+            font-size: 14px;
+            line-height: 28px;
+
+            &:nth-child(2) {
+                margin-top: 8px;
+            }
+        }
+    }
+
+    &-btn {
+        @include button;
+        margin-top: 20px;
+        width: 90px;
+        height: 40px;
+        border: 1px solid $light;
+        color: $light;
+
+        &:disabled {
+            color: $ui-disabled;
+            border: 1px solid $ui-disabled;
+        }
+    }
+
+    &__tabs {
+        margin-top: 40px;
+
+        &__wrapper {
+            display: flex;
+            gap: 60px;
+        }
+
+        &__information {
+            margin-top: 40px;
+        }
+    }
+
+    &__socials {
+        margin-top: 40px;
+
+        // text-align: end;
+        &__wrapper {
+            margin-top: 40px;
+            display: flex;
+            font-size: 20.8px;
+            gap: 10px;
+
+            div:before {
+                margin: 0;
+            }
+        }
+    }
+
+    &__copyright {
+        text-align: center;
+        margin-top: 40px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .footer {
+        &__tabs {
+            &__information {
+
+                margin-top: 0px;
+
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .footer {
+        &__tabs {
+            margin-top: 0px;
+
+            &__information {
+                margin-top: 0px;
+            }
+        }
+
+        &__socials {
+            text-align: end;
+            margin-top: 0px;
+
+            &__wrapper {
+                justify-content: end;
+            }
+        }
+
+        &__copyright {
+            margin-top: 50px;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .footer {
+        &__wrapper {
+            padding-top: 80px;
+        }
+
+        &__copyright {
+            margin-top: 18px;
+        }
+    }
+}

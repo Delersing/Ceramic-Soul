@@ -39,6 +39,7 @@ try {
         },
         modules: [Navigation, Pagination],
     });
+
 } catch (e) {
 
 }
