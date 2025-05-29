@@ -11,7 +11,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import "/src/sass/style.scss";
+import "./src/sass/style.scss";
 
 try {
     new Swiper('.works__slider', {
