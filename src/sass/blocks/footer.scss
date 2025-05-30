@@ -2,94 +2,98 @@
 @use "/src/sass/base/variables.scss" as *;
 
 .footer {
-    padding-bottom: 60px;
-    margin-top: 95px;
+    padding: 50px 0;
     background-color: $dark;
-    color: $light;
-    font-size: 16px;
-    font-weight: 400;
 
-    &__title {
-        text-transform: uppercase;
-        font-weight: 500;
+    &_spaced {
+        margin-top: 60px;
     }
 
-    &__subtitle {
-        margin-top: 20px;
+    &__header {
+        color: $light;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-transform: uppercase;
+    }
 
-        &-mg40px {
+    &__text {
+        color: $light;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+        &_spaced {
             margin-top: 40px;
         }
     }
 
-    &__wrapper {
-        padding-top: 50px;
+    &__form {
+        margin-top: 40px;
     }
 
-    &__newsletter {
-        &__wrapper {
-            width: 300px;
-            border-bottom: 1px solid $ui-active;
-            padding-bottom: 15px;
+    &__input {
+        display: block;
+        width: 293px;
+        padding-bottom: 15px;
+        background-color: transparent;
+        box-shadow: none;
+        border: none;
+        border-bottom: 1px solid $ui-active;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        color: $ui-active;
 
-            &-text {
-                margin-top: 40px;
-            }
-
-            &-input {
-                width: 100%;
-                padding: 5px 5px 5px 5px;
-                margin-top: 40px;
-                background-color: $dark;
-                border: none;
-                color: $light;
-            }
-        }
-
-        &__check-block {
-            display: flex;
-            align-items: center;
-            margin-top: 20px;
-
-            a {
-                color: #A22DC6;
-                text-decoration: none;
-                margin-left: 2px;
-            }
-
-        }
-
-        &__checkbox {
-            accent-color: #A22DC6;
-            margin-right: 15px;
-            width: 15px;
-            height: 15px;
-            vertical-align: middle;
-            background-color: $dark;
-            border-radius: 2px;
-            border: 1px solid $light;
-            appearance: none;
-            cursor: pointer;
-
-            &:checked {
-                appearance: auto;
-            }
-        }
-
-
-
-        &__label {
-            color: $light;
+        &::placeholder {
             font-size: 14px;
-            line-height: 28px;
-
-            &:nth-child(2) {
-                margin-top: 8px;
-            }
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            color: $ui-active;
         }
     }
 
-    &-btn {
+    &__check-block {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        color: $light;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px;
+
+        a {
+            margin-left: 3px;
+            text-decoration: none;
+            color: #a22dc6;
+        }
+    }
+
+    &__checkbox {
+        margin-right: 15px;
+        accent-color: #A22DC6;
+        margin-right: 15px;
+        width: 15px;
+        height: 15px;
+        vertical-align: middle;
+        background-color: $dark;
+        border-radius: 2px;
+        border: 1px solid $light;
+        appearance: none;
+        cursor: pointer;
+
+        &:checked {
+            appearance: auto;
+        }
+    }
+
+    &__form-btn {
+        margin-top: 20px;
         @include button;
         margin-top: 20px;
         width: 90px;
@@ -103,82 +107,113 @@
         }
     }
 
-    &__tabs {
+    &__links {
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 66px;
+        width: 230px;
+        row-gap: 40px;
+    }
+
+    &__nav {
         margin-top: 40px;
 
-        &__wrapper {
+        ul {
             display: flex;
-            gap: 60px;
-        }
-
-        &__information {
-            margin-top: 40px;
+            flex-direction: column;
+            row-gap: 20px;
+            padding: 0;
+            list-style-type: none;
         }
     }
 
-    &__socials {
+    &__link {
+        a {
+            color: $light;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-decoration: none;
+        }
+    }
+
+    &__social {
         margin-top: 40px;
 
-        // text-align: end;
-        &__wrapper {
+        &-block {
             margin-top: 40px;
             display: flex;
-            font-size: 20.8px;
-            gap: 10px;
+            column-gap: 10px;
+            padding: 0;
+            list-style-type: none;
 
-            div:before {
+            a {
+                display: block;
+                color: $light;
+                text-decoration: none;
+                font-size: 24px;
+            }
+
+            span:before {
                 margin: 0;
             }
         }
     }
 
     &__copyright {
-        text-align: center;
         margin-top: 40px;
+        text-align: center;
+        color: $light;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
     }
 }
 
 @media screen and (min-width: 768px) {
     .footer {
-        &__tabs {
-            &__information {
-
-                margin-top: 0px;
-
-            }
-        }
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .footer {
-        &__tabs {
-            margin-top: 0px;
-
-            &__information {
-                margin-top: 0px;
-            }
+        &__wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
 
-        &__socials {
-            text-align: end;
-            margin-top: 0px;
-
-            &__wrapper {
-                justify-content: end;
-            }
+        &__newsletter {
+            width: 100%;
         }
 
         &__copyright {
             margin-top: 50px;
         }
+
+        &__links {
+            width: auto;
+        }
     }
 }
 
 @media screen and (min-width: 1200px) {
     .footer {
-        &__wrapper {
-            padding-top: 80px;
+        &__newsletter {
+            width: auto;
+        }
+
+        &__social,
+        &__links {
+            margin-top: 0;
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .footer {
+        padding-top: 80px;
+
+        &_spaced {
+            margin-top: 100px;
         }
 
         &__copyright {

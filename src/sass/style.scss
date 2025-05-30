@@ -1,10 +1,11 @@
 @use "/src/sass/libs/modern-normalize.min.css";
 @use "/src/sass/libs/grids-min.css";
 @use "/src/sass/libs/grids-responsive-min.css";
-@use "/src/sass/base/basic-normalize.scss";
 @use "/src/sass/libs/fontello.css";
+@use "/src/sass/base/basic-normalize.scss";
 
 @use "/src/sass/blocks/header.scss";
+@use "/src/sass/blocks/footer.scss";
 
 @use "/src/sass/ui/titles.scss";
 @use "/src/sass/ui/buttons.scss";
@@ -13,4 +14,6 @@
 @use "/src/sass/blocks/activities.scss";
 @use "/src/sass/blocks/git.scss";
 @use "/src/sass/blocks/works.scss";
-@use "/src/sass/blocks/footer.scss";
+@use "/src/sass/blocks/catalog.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Roboto:ital@0;1&display=swap');
