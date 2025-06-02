@@ -1,7 +1,8 @@
 @use "/src/sass/base/variables.scss" as *;
+@use "/src/sass/base/mixins.scss" as *;
 
 .catalog {
-    padding-top: 50px;
+    // padding-top: 50px;
 
     &__title {
         margin-top: 60px;
@@ -64,36 +65,10 @@
             gap: 20px;
             flex-direction: column;
             align-items: center;
-            padding: 10px 0px 0px 10px;
-
-            &::before {
-                display: none;
-                content: '';
-                position: absolute;
-                top: 0px;
-                left: 0px;
-                background-color: $dark;
-                width: 200px;
-                height: 1px;
-            }
-
-            &::after {
-                display: none;
-                content: '';
-                position: absolute;
-                top: 0px;
-                left: 0px;
-                background-color: $dark;
-                width: 200px;
-                height: 1px;
-                transform-origin: 0 0;
-                transform: rotate(90deg);
-            }
         }
     }
 
     &__wrapper-card {
-        border: 1px solid $dark;
         background: $light;
         box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.25);
         width: 340px;
@@ -106,6 +81,9 @@
     }
 
     &__content-descr {
+        border-right: 1px solid $dark;
+        border-bottom: 1px solid $dark;
+        border-left: 1px solid $dark;
         padding: 11px 11px 16px 11px;
         font-weight: 500;
     }
@@ -126,14 +104,8 @@
             gap: 20px;
             flex-direction: row;
             align-items: baseline;
-
-            &::after {
-                display: block;
-            }
-
-            &::before {
-                display: block;
-            }
+            padding: 10px 10px 0px 10px;
+            @include angle-decoration;
         }
     }
 }

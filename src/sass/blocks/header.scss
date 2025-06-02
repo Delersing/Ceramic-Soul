@@ -1,6 +1,8 @@
 @use "/src/sass/base/variables.scss" as *;
 
 .header {
+    padding-top: 50px;
+
     &__top {
         display: flex;
         justify-content: space-between;
