@@ -1,0 +1,49 @@
+.about {
+    &__title {
+        margin-top: 60px;
+    }
+
+    &__wrapper {
+        display: flex;
+        margin-top: 60px;
+        flex-direction: column;
+        row-gap: 35px;
+    }
+
+    &__img {
+        object-fit: cover;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .about {
+        &__img {
+            padding: 0 60px 0 60px;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .about {
+        &__wrapper {
+            flex-direction: row;
+        }
+
+        &__img {
+            padding: 0px 20px 0px 0px;
+
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .about {
+        &__wrapper {
+            margin-top: 100px;
+        }
+
+        &__text {
+            font-size: 20px;
+        }
+    }
+}
