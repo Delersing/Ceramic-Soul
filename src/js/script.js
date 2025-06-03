@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     } catch (e) { }
     try {
-        const validator = new JustValidate('form', { submitFormAutomatically: true });
+        const validator = new JustValidate('form');
         validator
             .addField('#name', [
                 {
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     } catch (e) { }
     try {
-        const footer__validator = new JustValidate('.footer__form', { submitFormAutomatically: true });
+        const footer__validator = new JustValidate('.footer__form');
         footer__validator
             .addField('#footer__email', [
                 {
@@ -172,5 +172,22 @@ document.addEventListener('DOMContentLoaded', () => {
             ], {
                 errorsContainer: document.querySelector('#footer__checkbox').parentElement.parentElement.querySelector('.checkbox-error-message'),
             });
+    } catch (e) { }
+    try {
+        const btns = document.querySelectorAll('.btn-read');
+        btns.forEach(button => {
+            button.addEventListener('click', (event) => {
+                const card = button.closest('.blog__card'),
+                    textShort = card.querySelector('.blog__card__text'),
+                    textMax = card.querySelector('.blog__card__text-max');
+                textShort.classList.toggle('hide');
+                textMax.classList.toggle('active');
+                if (textMax.classList.contains('active')) {
+                    button.textContent = 'collapse';
+                } else {
+                    button.textContent = 'read';
+                }
+            });
+        });
     } catch (e) { }
 });

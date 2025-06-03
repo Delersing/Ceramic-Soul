@@ -55,6 +55,18 @@
             line-height: normal;
             color: $ui-active;
         }
+
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 1000px $dark inset !important;
+        /* Цвет фона (черный) */
+        -webkit-text-fill-color: $light !important;
+        /* Цвет текста (белый) */
+        transition: background-color 5000s ease-in-out 0s;
     }
 
     &__check-block {
