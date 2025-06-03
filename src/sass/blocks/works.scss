@@ -13,6 +13,7 @@
 
     .swiper-slide img {
         width: 100%;
+
     }
 
     .works__slider-nav {
@@ -29,6 +30,11 @@
             background-color: $dark;
             opacity: 1;
             -webkit-tap-highlight-color: transparent; // для мобилок, когда кликаем по доту, он становится серым или каким-то другим цветом
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.05);
+            }
 
             &-active {
                 background-color: $ceramic;
