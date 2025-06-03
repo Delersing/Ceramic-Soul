@@ -6,6 +6,7 @@
 // мои файлики
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
+import JustValidate from 'just-validate';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -101,5 +102,75 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
+    } catch (e) { }
+    try {
+        const validator = new JustValidate('form', { submitFormAutomatically: true });
+        validator
+            .addField('#name', [
+                {
+                    rule: 'required',
+                    errorMessage: 'Please fill the name',
+                },
+                {
+                    rule: 'minLength',
+                    value: 2,
+                    errorMessage: 'Minimum 2 char',
+                },
+            ])
+            .addField('#email', [
+                {
+                    rule: 'required',
+                    errorMessage: 'Please fill the email',
+                },
+                {
+                    rule: 'email',
+                    errorMessage: 'Please fill the right email',
+                },
+            ])
+            .addField('#question', [
+                {
+                    rule: 'required',
+                    errorMessage: 'Please write your question',
+                },
+                {
+                    rule: 'minLength',
+                    value: 15,
+                    errorMessage: 'minimum 10 char',
+                },
+            ], {
+                errorsContainer: document.querySelector('#question').parentElement.querySelector('.error-message'),
+            })
+            .addField('#checkbox', [
+                {
+                    rule: 'required',
+                    errorMessage: 'Checkbox is not checked',
+                },
+            ], {
+                errorsContainer: document.querySelector('#checkbox').parentElement.parentElement.querySelector('.checkbox-error-message'),
+            });
+    } catch (e) { }
+    try {
+        const footer__validator = new JustValidate('.footer__form', { submitFormAutomatically: true });
+        footer__validator
+            .addField('#footer__email', [
+                {
+                    rule: 'required',
+                    errorMessage: 'Please fill the email',
+                },
+                {
+                    rule: 'email',
+                    errorMessage: 'Please fill the right email',
+                },
+            ], {
+                errorsContainer: document.querySelector('#footer__email').parentElement.querySelector('.email-error-message'),
+            })
+            .addField('#footer__checkbox', [
+                {
+                    rule: 'required',
+                    errorMessage: 'Checkbox is not checked',
+                },
+            ], {
+                errorsContainer: document.querySelector('#footer__checkbox').parentElement.parentElement.querySelector('.checkbox-error-message'),
+            });
     } catch (e) { }
 });

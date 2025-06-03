@@ -3,6 +3,21 @@
 .git {
     padding-top: 60px;
 
+    .just-validate-error-field {
+        border: none;
+        outline: 1px solid $ui-error;
+
+        &:hover,
+        &:focus {
+            outline: 1px solid $ui-error;
+        }
+
+    }
+
+    #checkbox {
+        outline: none;
+    }
+
     &__wrapper {
         min-height: 300px;
         margin-top: 60px;
@@ -57,7 +72,7 @@
 
     &__textarea {
         width: 100%;
-        min-height: 160px;
+        min-height: 132px;
         padding: 10px 15px;
         border-radius: 2px;
         border: 1px solid #E2E1E5;
