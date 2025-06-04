@@ -18,6 +18,49 @@
         outline: none;
     }
 
+    &__modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.5);
+
+        &_active {
+            display: block;
+        }
+
+        &-close {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            color: $ceramic;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        &-text {
+            padding-top: 10px;
+        }
+
+        &-content {
+            background-color: white;
+            top: 50%;
+            right: -50%;
+            transform: translateX(-50%) translateY(-50%);
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 320px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    }
+
     &__wrapper {
         min-height: 300px;
         margin-top: 60px;

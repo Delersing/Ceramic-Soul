@@ -31,7 +31,7 @@
         flex-direction: column;
         gap: 40px;
         margin-top: 60px;
-
+        padding: 0 10px;
     }
 
     &__title-h3 {
@@ -42,11 +42,7 @@
         border: 1px solid $dark;
         background: $light;
         box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.25);
-        transition: transform 0.3s ease;
 
-        &:hover {
-            transform: translateY(-5px) scale(1.02);
-        }
 
         &__content-column {
             display: flex;
@@ -72,6 +68,7 @@
     }
 
     &__img {
+        width: calc(100% + 1.5px);
         max-inline-size: calc(100% + 2px);
         transform: translateX(-1px) translateY(-1px);
     }
@@ -118,7 +115,11 @@
         &__card {
             width: 50%;
             height: 100%;
+            transition: transform 0.3s ease;
 
+            &:hover {
+                transform: translateY(-5px) scale(1.02);
+            }
         }
     }
 }

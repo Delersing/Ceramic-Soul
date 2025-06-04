@@ -56,6 +56,18 @@
             color: $ui-active;
         }
 
+        &.just-validate-error-field {
+            border-color: $ui-error;
+
+            &:focus,
+            &:active {
+                outline: none;
+            }
+
+            &::placeholder {
+                color: $ui-error;
+            }
+        }
     }
 
     input:-webkit-autofill,

@@ -103,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     } catch (e) { }
+    // форма
     try {
         const validator = new JustValidate('form');
         validator
@@ -134,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 {
                     rule: 'minLength',
-                    value: 15,
+                    value: 10,
                     errorMessage: 'minimum 10 char',
                 },
             ], {
@@ -147,7 +148,51 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
             ], {
                 errorsContainer: document.querySelector('#checkbox').parentElement.parentElement.querySelector('.checkbox-error-message'),
+            })
+            // рабочий шаблон обычного скрипта запроса на сервер с выводом данных в консоль
+            // .onSuccess((event) => {
+            //     const form = event.currentTarget;
+            //     const formData = new FormData(form);
+
+            //     fetch('https://httpbin.org/post', {
+            //         method: 'POST',
+            //         body: formData,
+            //     })
+            //         .then(res => res.json())
+            //         .then(data => {
+            //             console.log('Success', data);
+            //             form.reset();
+            //         });
+            // });
+            .onSuccess((event) => {
+                (function () {
+                    emailjs.init({
+                        publicKey: "sb9YVPgGaoSpyQ2kj",
+                    });
+                })();
+                const form = event.currentTarget;
+
+                emailjs.sendForm('service_lmfzgk5', 'template_cg6degm', form)
+                    .then(function () {
+                        console.log('SUCCESS!');
+                        form.reset();
+                        showModal();
+                    }, function (error) {
+                        console.log('FAILED...', error);
+                        alert('Ошибка отправки: ' + JSON.stringify(error));
+                    });
             });
+        function showModal() {
+            const modal = document.querySelector('.git__modal'),
+                close = document.querySelector('.git__modal-close');
+
+            modal.classList.add('git__modal_active');
+            document.body.style.overflow = 'hidden';
+            close.addEventListener('click', (e) => {
+                modal.classList.remove('git__modal_active');
+                document.body.style.overflow = '';
+            });
+        }
     } catch (e) { }
     try {
         const footer__validator = new JustValidate('.footer__form');
@@ -171,6 +216,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
             ], {
                 errorsContainer: document.querySelector('#footer__checkbox').parentElement.parentElement.querySelector('.checkbox-error-message'),
+            })
+            .onSuccess((event) => {
+                event.currentTarget.submit();
             });
     } catch (e) { }
     try {
