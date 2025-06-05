@@ -1,6 +1,7 @@
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
@@ -15,4 +16,17 @@ export default defineConfig({
             },
         },
     },
+    plugins: [
+        ViteImageOptimizer({
+            /* pass your config */
+            jpg: {
+                // https://sharp.pixelplumbing.com/api-output#jpeg
+                quality: 80,
+            },
+            png: {
+                // https://sharp.pixelplumbing.com/api-output#png
+                quality: 80,
+            },
+        }),
+    ],
 })
