@@ -102,6 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
+
     } catch (e) { }
     // форма
     try {
@@ -149,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ], {
                 errorsContainer: document.querySelector('#checkbox').parentElement.parentElement.querySelector('.checkbox-error-message'),
             })
-            // рабочий шаблон обычного скрипта запроса на сервер с выводом данных в консоль
+            // рабочий шаблон обычного скрипта (второй способ из 2-х, первый это в обычной форме action, но он почти не используется) запроса на сервер с выводом данных в консоль
             // .onSuccess((event) => {
             //     const form = event.currentTarget;
             //     const formData = new FormData(form);
@@ -185,7 +186,6 @@ document.addEventListener('DOMContentLoaded', () => {
         function showModal() {
             const modal = document.querySelector('.git__modal'),
                 close = document.querySelector('.git__modal-close');
-
             modal.classList.add('git__modal_active');
             document.body.style.overflow = 'hidden';
             close.addEventListener('click', (e) => {
@@ -217,9 +217,40 @@ document.addEventListener('DOMContentLoaded', () => {
             ], {
                 errorsContainer: document.querySelector('#footer__checkbox').parentElement.parentElement.querySelector('.checkbox-error-message'),
             })
+            // снизу имитация способа 1 - как и в форме заполнение action
+            // .onSuccess((event) => {
+            //     event.currentTarget.submit();
+            // });
             .onSuccess((event) => {
-                event.currentTarget.submit();
+                (function () {
+                    emailjs.init({
+                        publicKey: "sb9YVPgGaoSpyQ2kj",
+                    });
+                })();
+                const form = event.currentTarget;
+
+                emailjs.sendForm('service_lmfzgk5', 'template_emwok51', form)
+                    .then(function () {
+                        console.log('SUCCESS!');
+                        form.reset();
+                        showFooterModal();
+                    }, function (error) {
+                        console.log('FAILED...', error);
+                        alert('Ошибка отправки: ' + JSON.stringify(error));
+                    });
             });
+        function showFooterModal() {
+            const modal = document.querySelector('.git__modal'),
+                close = document.querySelector('.git__modal-close');
+            modal.querySelector('.git__modal-text').textContent = 'Спасибо! Мы будем радовать вас новыми и интересными новостями';
+
+            modal.classList.add('git__modal_active');
+            document.body.style.overflow = 'hidden';
+            close.addEventListener('click', (e) => {
+                modal.classList.remove('git__modal_active');
+                document.body.style.overflow = '';
+            });
+        }
     } catch (e) { }
     try {
         const btns = document.querySelectorAll('.btn-read');
