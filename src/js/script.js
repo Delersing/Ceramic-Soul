@@ -186,6 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
         function showModal() {
             const modal = document.querySelector('.git__modal'),
                 close = document.querySelector('.git__modal-close');
+            modal.querySelector('.git__modal-text').textContent = 'Ваша заявка оставлена!';
             modal.classList.add('git__modal_active');
             document.body.style.overflow = 'hidden';
             close.addEventListener('click', (e) => {
