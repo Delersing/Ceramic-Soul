@@ -104,8 +104,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
     } catch (e) { }
+
     // форма
+
     try {
+
         const validator = new JustValidate('form');
         validator
             .addField('#name', [
@@ -175,18 +178,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 emailjs.sendForm('service_lmfzgk5', 'template_cg6degm', form)
                     .then(function () {
-                        console.log('SUCCESS!');
                         form.reset();
                         showModal();
                     }, function (error) {
                         console.log('FAILED...', error);
-                        alert('Ошибка отправки: ' + JSON.stringify(error));
+                        alert('Sending error');
                     });
             });
         function showModal() {
             const modal = document.querySelector('.git__modal'),
                 close = document.querySelector('.git__modal-close');
-            modal.querySelector('.git__modal-text').textContent = 'Ваша заявка оставлена!';
+            modal.querySelector('.git__modal-text').textContent = 'Your request has been submitted!';
             modal.classList.add('git__modal_active');
             document.body.style.overflow = 'hidden';
             close.addEventListener('click', (e) => {
@@ -232,18 +234,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 emailjs.sendForm('service_lmfzgk5', 'template_emwok51', form)
                     .then(function () {
-                        console.log('SUCCESS!');
                         form.reset();
                         showFooterModal();
                     }, function (error) {
                         console.log('FAILED...', error);
-                        alert('Ошибка отправки: ' + JSON.stringify(error));
+                        alert('Sending error');
                     });
             });
+
+        // модальное окно футера
+
         function showFooterModal() {
             const modal = document.querySelector('.git__modal'),
                 close = document.querySelector('.git__modal-close');
-            modal.querySelector('.git__modal-text').textContent = 'Спасибо! Мы будем радовать вас новыми и интересными новостями';
+            modal.querySelector('.git__modal-text').textContent = 'Thank you! We will delight you with new and interesting news';
 
             modal.classList.add('git__modal_active');
             document.body.style.overflow = 'hidden';
@@ -254,6 +258,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     } catch (e) { }
     try {
+
+        // раскрывающиеся карточки в блоге
+
         const btns = document.querySelectorAll('.btn-read');
         btns.forEach(button => {
             button.addEventListener('click', (event) => {
@@ -269,5 +276,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
+    } catch (e) { }
+
+    // motion-animation
+
+    try {
+
+        // animate(
+        //     ".git__img-vase",
+        //     {
+        //         rotate: [0, 180, 360] // массив значений поворота (в градусах)
+        //     },
+        //     {
+        //         duration: 2, // общее время на весь цикл (0→180→360)
+        //         repeat: Infinity,
+        //         easing: "ease", // для равномерности
+        //         repeatDelay: 0.2,
+        //         stiffness: 200,
+        //     }
+        // )
+
+        // drag and drop
+
+
     } catch (e) { }
 });

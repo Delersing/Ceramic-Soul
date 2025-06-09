@@ -102,8 +102,13 @@
                             </div>
                         </fieldset>
                         <label for="question" class="git__label">Your question</label>
-                        <textarea required name="question" id="question" class="git__textarea"
-                            placeholder="Question"></textarea>
+                        <div class="git__textarea__wrapper">
+                            <textarea required name="question" id="question" class="git__textarea"
+                                placeholder="Question"></textarea>
+                            <div class="git__counter">
+                                <span id="counter">10</span>
+                            </div>
+                        </div>
                         <div class="error-message"></div>
 
                         <label class="git__label git__check-block" for="checkbox"><input required class="git__checkbox"
@@ -121,7 +126,7 @@
             <div class="git__modal">
                 <div class="git__modal-content">
                     <span class="git__modal-close">&times;</span>
-                    <p class="git__modal-text">Ваша заявка оставлена!</p>
+                    <p class="git__modal-text">Your request has been submitted!</p>
                 </div>
             </div>
         </div>
@@ -195,6 +200,7 @@
         </div>
     </footer>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="module" src="/src/js/motion-animation.js"></script>
     <script type="module" src="/src/js/script.js"></script>
 </body>
 

@@ -73,6 +73,7 @@
 
     &__img-vase {
         display: none;
+
     }
 
     &__fieldset {
@@ -113,10 +114,14 @@
         }
     }
 
+    &__textarea__wrapper {
+        position: relative;
+    }
+
     &__textarea {
         width: 100%;
         min-height: 132px;
-        padding: 10px 15px;
+        padding: 10px 30px 10px 15px;
         border-radius: 2px;
         border: 1px solid #E2E1E5;
         background: #fff;
@@ -131,6 +136,18 @@
         &::placeholder {
             color: $ui-disabled;
             font-size: 14px;
+        }
+    }
+
+    &__counter {
+        color: $ceramic;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        padding: 10px;
+
+        #counter {
+            display: block;
         }
     }
 
@@ -171,6 +188,7 @@
             position: absolute;
             right: 0px;
             bottom: 0px;
+            cursor: pointer;
         }
 
         &__form {
