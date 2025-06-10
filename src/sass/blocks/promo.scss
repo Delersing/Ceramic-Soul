@@ -1,3 +1,5 @@
+@use "/src/sass/base/variables.scss" as *;
+
 .promo {
     position: relative;
     // padding-top: 50px;
@@ -27,6 +29,7 @@
 
     &__btn {
         margin: 18px auto 0 auto;
+        align-content: center;
     }
 
     &__link {

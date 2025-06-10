@@ -8,8 +8,9 @@
     <meta name="author" content="Awesome student" />
     <title>About</title>
     <link rel="icon" type="image/x-icon" href="/assets/favicon-A_W1hML8.ico" />
-  <script type="module" crossorigin src="/assets/script-CJUeML4m.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/script-DL4uFLa1.css">
+  <script type="module" crossorigin src="/assets/script-Baq5ZZg4.js"></script>
+  <script type="module" crossorigin src="/assets/motion-animation-COi_lPRh.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/script-CR_dquYs.css">
 </head>
 
 <body>
@@ -104,8 +105,13 @@
                             </div>
                         </fieldset>
                         <label for="question" class="git__label">Your question</label>
-                        <textarea required name="question" id="question" class="git__textarea"
-                            placeholder="Question"></textarea>
+                        <div class="git__textarea__wrapper">
+                            <textarea required name="question" id="question" class="git__textarea"
+                                placeholder="Question"></textarea>
+                            <div class="git__counter">
+                                <span id="counter">10</span>
+                            </div>
+                        </div>
                         <div class="error-message"></div>
 
                         <label class="git__label git__check-block" for="checkbox"><input required class="git__checkbox"
@@ -123,7 +129,7 @@
             <div class="git__modal">
                 <div class="git__modal-content">
                     <span class="git__modal-close">&times;</span>
-                    <p class="git__modal-text">Ваша заявка оставлена!</p>
+                    <p class="git__modal-text">Your request has been submitted!</p>
                 </div>
             </div>
         </div>
@@ -196,7 +202,7 @@
             </div>
         </div>
     </footer>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </body>
 
 </html>

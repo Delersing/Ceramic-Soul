@@ -277,27 +277,4 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     } catch (e) { }
-
-    // motion-animation
-
-    try {
-
-        // animate(
-        //     ".git__img-vase",
-        //     {
-        //         rotate: [0, 180, 360] // массив значений поворота (в градусах)
-        //     },
-        //     {
-        //         duration: 2, // общее время на весь цикл (0→180→360)
-        //         repeat: Infinity,
-        //         easing: "ease", // для равномерности
-        //         repeatDelay: 0.2,
-        //         stiffness: 200,
-        //     }
-        // )
-
-        // drag and drop
-
-
-    } catch (e) { }
 });
