@@ -1,4 +1,4 @@
-import { animate, transform, scroll, inView, press } from "motion";
+import { animate, transform, scroll, press } from "motion";
 
 // input counter animation
 try {
